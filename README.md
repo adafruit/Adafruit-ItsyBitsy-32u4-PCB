@@ -16,7 +16,7 @@ What's smaller than a Feather but larger than a Trinket? It's an ItsyBitsy! Smal
 
 ItsyBitsy is only 1.4" long by 0.7" wide, but has 6 power pins, 6 analog & digital pins and 17 digital pins. It packs much of the same capability as an Arduino UNO. So it's great once you've finished up a prototype on a bigger Arduino, and want to make the project much smaller.
 
-The ItsyBitsy 32u4 5V 16MHz and 3V 8MHz use the Atmega32u4 chip, which is the same core chip in the Arduino Leonardo as well as the same chip we use in our Feather 32u4. You'll be happy to hear that not only is ItsyBitsy programmable using the Arduino IDE as you already set up, but a vast number of Arduino projects will work out of the box!
+The ItsyBitsy 32u4 5V 16MHz and 3V 8MHz use the Atmega32u4 chip, which is the same core chip in the Arduino Leonardo as well as the same chip we use in our Feather 32u4. You'll be happy to hear that not only is ItsyBitsy programmable using the Arduino IDE as you already have set up, but a vast number of Arduino projects will work out of the box!
 
 We recommend this as an upgrade from the Pro Trinket 5V/3V because they has native USB so it will work with all computers, USB serial debugging, and a more reliable bootloader.
 
