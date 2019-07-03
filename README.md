@@ -2,7 +2,7 @@
 
 <a href="http://www.adafruit.com/products/3677"><img src="assets/3677.jpg?raw=true" width="400px">&nbsp; 
 <a href="http://www.adafruit.com/products/3675"><img src="assets/3675.jpg?raw=true" width="400px"><br/>
-Click pictore or links below to purchase one from the Adafruit shop</a>
+Click picture or links below to purchase one from the Adafruit shop</a>
 
 PCB CAD files for the Adafruit ItsyBitsy 32u4. PCB format is EagleCAD schematic and board layout
 
