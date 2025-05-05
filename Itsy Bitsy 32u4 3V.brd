@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.4">
+<eagle version="9.6.2">
 <drawing>
 <settings>
-<setting alwaysvectorfont="yes"/>
+<setting alwaysvectorfont="no"/>
+<setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="0.005" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.025" altunitdist="inch" altunit="inch"/>
@@ -66,7 +67,7 @@
 <layer number="57" name="tCAD" color="7" fill="1" visible="no" active="no"/>
 <layer number="59" name="tCarbon" color="7" fill="1" visible="no" active="no"/>
 <layer number="60" name="bCarbon" color="7" fill="1" visible="no" active="no"/>
-<layer number="90" name="Modules" color="7" fill="1" visible="no" active="yes"/>
+<layer number="90" name="Modules" color="7" fill="1" visible="no" active="no"/>
 <layer number="91" name="Nets" color="2" fill="1" visible="no" active="no"/>
 <layer number="92" name="Busses" color="1" fill="1" visible="no" active="no"/>
 <layer number="93" name="Pins" color="2" fill="1" visible="no" active="no"/>
@@ -3202,16 +3203,23 @@ einem neuen Namen ab.</description>
 <param name="slThermalsForVias" value="0"/>
 <param name="dpMaxLengthDifference" value="10mm"/>
 <param name="dpGapFactor" value="2.5"/>
-<param name="checkGrid" value="0"/>
 <param name="checkAngle" value="1"/>
 <param name="checkFont" value="1"/>
 <param name="checkRestrict" value="1"/>
+<param name="checkStop" value="0"/>
+<param name="checkValues" value="0"/>
+<param name="checkNames" value="1"/>
+<param name="checkWireStubs" value="1"/>
+<param name="checkPolygonWidth" value="0"/>
 <param name="useDiameter" value="13"/>
 <param name="maxErrors" value="50"/>
 </designrules>
 <autorouter>
 <pass name="Default">
 <param name="RoutingGrid" value="50mil"/>
+<param name="AutoGrid" value="1"/>
+<param name="Efforts" value="0"/>
+<param name="TopRouterVariant" value="1"/>
 <param name="tpViaShape" value="round"/>
 <param name="PrefDir.1" value="|"/>
 <param name="PrefDir.2" value="0"/>
@@ -3314,8 +3322,8 @@ einem neuen Namen ab.</description>
 <element name="C8" library="microbuilder" package="0805-NO" value="10µF" x="7.112" y="5.588" smashed="yes" rot="R90">
 <attribute name="COMPANY" value="ADAFRUIT INDUSTRIES" x="7.112" y="5.588" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="DRAWN" value="KTOWN" x="7.112" y="5.588" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="REV" value="A" x="7.112" y="5.588" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="NAME" x="6.4245" y="7.458" size="0.8128" layer="25" ratio="18"/>
+<attribute name="REV" value="A" x="7.112" y="5.588" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="VALUE" x="7.49" y="4.2926" size="0.8128" layer="27" ratio="10" rot="R90"/>
 </element>
 <element name="R4" library="microbuilder" package="0603-NO" value="22" x="7.874" y="10.287" smashed="yes">
@@ -3361,7 +3369,7 @@ einem neuen Namen ab.</description>
 <attribute name="NAME" x="-1.407" y="11.668" size="0.8128" layer="25" ratio="18" rot="R270"/>
 <attribute name="VALUE" x="0.448" y="11.541" size="0.8128" layer="27" ratio="10" rot="R270"/>
 </element>
-<element name="U2" library="microbuilder" package="SOT23-5" value="MIC5225-3.3" x="11.938" y="7.5692" smashed="yes" rot="R180">
+<element name="U2" library="microbuilder" package="SOT23-5" value="AP2112K" x="11.938" y="7.5692" smashed="yes" rot="R180">
 <attribute name="NAME" x="9.96" y="7.5692" size="0.8128" layer="25" ratio="18" rot="R180"/>
 <attribute name="VALUE" x="17.072" y="7.9502" size="0.8128" layer="27" ratio="10" rot="R180"/>
 </element>
@@ -3433,20 +3441,11 @@ einem neuen Namen ab.</description>
 <contactref element="X3" pad="BASE@2"/>
 <contactref element="X3" pad="SPRT@4"/>
 <contactref element="X3" pad="BASE@1"/>
-<contactref element="X3" pad="SPRT@2"/>
-<contactref element="X3" pad="SPRT@1"/>
-<contactref element="X3" pad="GND"/>
-<contactref element="X3" pad="SPRT@3"/>
-<contactref element="X3" pad="BASE@2"/>
-<contactref element="X3" pad="SPRT@4"/>
-<contactref element="X3" pad="BASE@1"/>
 <contactref element="U2" pad="2"/>
 <contactref element="L" pad="C"/>
 <contactref element="JP2" pad="2"/>
-<contactref element="JP2" pad="2"/>
 <contactref element="IC2" pad="3"/>
 <contactref element="IC2" pad="1"/>
-<contactref element="IC2" pad="3"/>
 <wire x1="18.388015625" y1="5.2725875" x2="19.431" y2="6.315571875" width="0.2032" layer="1"/>
 <wire x1="19.431" y1="6.315571875" x2="19.431" y2="8.436890625" width="0.2032" layer="1"/>
 <wire x1="19.431" y1="8.436890625" x2="19.431" y2="9.144" width="0.2032" layer="1"/>
@@ -3732,7 +3731,6 @@ einem neuen Namen ab.</description>
 </signal>
 <signal name="VBUS">
 <contactref element="IC1" pad="7"/>
-<contactref element="X3" pad="VBUS"/>
 <contactref element="X3" pad="VBUS"/>
 <contactref element="JP2" pad="3"/>
 <contactref element="D1" pad="A"/>
@@ -4053,6 +4051,13 @@ einem neuen Namen ab.</description>
 <wire x1="30.891" y1="11.75" x2="30.51" y2="12.131" width="0.2032" layer="1"/>
 </signal>
 </signals>
+<mfgpreviewcolors>
+<mfgpreviewcolor name="soldermaskcolor" color="0xC8008000"/>
+<mfgpreviewcolor name="silkscreencolor" color="0xFFFEFEFE"/>
+<mfgpreviewcolor name="backgroundcolor" color="0xFF282828"/>
+<mfgpreviewcolor name="coppercolor" color="0xFFFFBF00"/>
+<mfgpreviewcolor name="substratecolor" color="0xFF786E46"/>
+</mfgpreviewcolors>
 </board>
 </drawing>
 <compatibility>
